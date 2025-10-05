@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw_tb
+    database: NYC_TAXI_DB
+    schema: RAW
+    tables:
+      - name: YELLOW_TAXI_TRIPS
+        columns:
+          - name: VENDORID
+            tests:
+              - not_null
+  - name: stating_tb
+    database: NYC_TAXI_DB
+    schema: STAGING
+    tables:
+      - name: INT_TRIP_METRICS
+        columns:
+          - name: VENDORID
+            tests:
+              - not_null

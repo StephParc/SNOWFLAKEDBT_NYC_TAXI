@@ -1,0 +1,32 @@
+WITH fact_trips AS(
+    SELECT
+
+    FROM {{ ref('int_trip_metrics') }}
+)
+
+    -- VENDORID,
+    -- TPEP_PICKUP_DATETIME,
+    -- TPEP_DROPOFF_DATETIME,
+    -- TEMPORAL_PERIOD,
+    -- DAY_TYPE,
+    -- DURATION,
+    -- PASSENGER_COUNT,
+    -- TRIP_DISTANCE,
+    -- DISTANCE_CATEGORY,
+    -- RATECODEID,
+    -- STORE_AND_FWD_FLAG,
+    -- PULOCATIONID,
+    -- DOLOCATIONID,
+    -- PAYMENT_TYPE,
+    -- FARE_AMOUNT,
+    -- EXTRA,
+    -- MTA_TAX,
+    -- TIP_AMOUNT,
+    -- TIP_PART,
+    -- TOLLS_AMOUNT,
+    -- IMPROVEMENT_SURCHARGE,
+    -- TOTAL_AMOUNT,
+    -- CONGESTION_SURCHARGE,
+    -- AIRPORT_FEE,
+    -- CBD_CONGESTION_FEE
+    -- AVERAGE_SPEED

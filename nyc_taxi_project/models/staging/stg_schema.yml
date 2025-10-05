@@ -1,0 +1,101 @@
+version: 2
+
+models:
+  - name: stg_yellow_taxi_trips
+    description: "NYC yellow taxi trips table since 2024, January"
+    columns:
+      - name: VENDORID
+        description: |
+          "A code indicating the TPEP provider that provided the record."
+          1 = Creative Mobile Technologies, LLC
+          2 = Curb Mobility, LLC
+          6 = Myle Technologies Inc
+          7 = Helix
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 6, 7]
+      - name: TPEP_PICKUP_DATETIME
+        description: "The date and time when the meter was engaged."
+        tests: 
+          - not_null
+      - name: TPEP_DROPOFF_DATETIME
+        description: "The date and time when the meter was disengaged."
+        tests: 
+          - not_null
+      - name: PASSENGER_COUNT
+        description: "The number of passengers in the vehicle."
+      - name: TRIP_DISTANCE
+        description: "The elapsed trip distance in miles reported by the taximeter."
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0.1 and <= 1000"
+      - name: RATECODEID
+        description: |
+          The final rate code in effect at the end of the trip.
+          1 = Standard rate
+          2 = JFK
+          3 = Newark
+          4 = Nassau or Westchester
+          5 = Negotiated fare
+          6 = Group ride
+          99 = Null/unknown
+        tests: 
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 99]        
+      - name: STORE_AND_FWD_FLAG
+        description: |
+          This flag indicates whether the trip record was held in vehicle memory before
+          sending to the vendor, aka 'store and forward,' because the vehicle did not
+          have a connection to the server.
+          Y = store and forward trip
+          N = not a store and forward trip
+      - name: PULOCATIONID
+        description: "TLC Taxi Zone in which the taximeter was engaged"
+        tests: 
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1 and <= 265"
+      - name: DOLOCATIONID
+        description: "TLC Taxi Zone in which the taximeter was disengaged"
+        tests: 
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 1 and <= 265"
+      - name: PAYMENT_TYPE
+        description: |
+          A numeric code signifying how the passenger paid for the trip.
+          0 = Flex Fare trip
+          1 = Credit card
+          2 = Cash
+          3 = No charge
+          4 = Dispute
+          5 = Unknown
+          6 = Voided trip
+        tests: 
+          - accepted_values: 
+            values: [0, 1, 2, 3, 4, 5, 6]
+      - name: FARE_AMOUNT
+        description: "The time-and-distance fare calculated by the meter."
+      - name: EXTRA
+        description: "Miscellaneous extras and surcharges." 
+      - name: MTA_TAX
+        description: "Tax that is automatically triggered based on the metered rate in use."
+      - name: TIP_AMOUNT
+        description: "Tip amount – This field is automatically populated for credit card tips. Cash
+          tips are not included."
+      - name: TOLLS_AMOUNT
+        description: "Total amount of all tolls paid in trip."
+      - name: IMPROVEMENT_SURCHARGE
+        description: "Improvement surcharge assessed trips at the flag drop. The improvement
+          surcharge began being levied in 2015"
+      - name: TOTAL_AMOUNT
+        description: "The total amount charged to passengers. Does not include cash tips"
+      - name: CONGESTION_SURCHARGE
+        description: "Total amount collected in trip for NYS congestion surcharge."
+      - name: AIRPORT_FEE
+        description: "For pick up only at LaGuardia and John F. Kennedy Airports."
+      - name: CBD_CONGESTION_FEE
+        description: "Per-trip charge for MTA's Congestion Relief Zone starting Jan. 5, 2025."
+   
+

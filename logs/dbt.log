@@ -1,0 +1,29 @@
+[0m15:33:30.602856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFE6FB7BC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFE8F6F170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFE7197A70>]}
+
+
+============================== 15:33:30.639753 | f8e89b2f-1945-4794-bfd2-868d9b92af7c ==============================
+[0m15:33:30.639753 [info ] [MainThread]: Running with dbt=1.10.13
+[0m15:33:30.640283 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'use_colors': 'True', 'invocation_command': 'dbt init', 'log_format': 'default', 'warn_error': 'None', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'fail_fast': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'empty': 'None', 'log_path': 'logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\Stephanie\\.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True'}
+[0m15:33:45.509292 [debug] [MainThread]: Starter project path: C:\Users\Stephanie\Documents\Formations_info\Simplon\NYC_TAXI\.venv\Lib\site-packages\dbt\include\starter_project
+[0m15:33:45.546710 [info ] [MainThread]: 
+Your new dbt project "nyc_taxi_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:33:45.546710 [info ] [MainThread]: Setting up your profile.
+[0m15:36:18.239583 [info ] [MainThread]: Profile nyc_taxi_project written to C:\Users\Stephanie\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m15:36:18.245151 [debug] [MainThread]: Command `dbt init` succeeded at 15:36:18.245151 after 167.84 seconds
+[0m15:36:18.246655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFE95BE330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFEB1F7CE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFEB071B50>]}
+[0m15:36:18.246655 [debug] [MainThread]: Flushing usage events
+[0m15:36:19.240289 [debug] [MainThread]: An error was encountered while trying to flush usage events
