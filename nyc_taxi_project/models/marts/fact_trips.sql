@@ -1,8 +1,6 @@
-WITH fact_trips AS(
-    SELECT
-
-    FROM {{ ref('int_trip_metrics') }}
-)
+SELECT
+    *
+FROM {{ ref('int_trip_metrics') }}
 
     -- VENDORID,
     -- TPEP_PICKUP_DATETIME,

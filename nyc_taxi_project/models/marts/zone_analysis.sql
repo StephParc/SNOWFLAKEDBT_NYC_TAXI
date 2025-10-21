@@ -1,8 +1,8 @@
-WITH trip_counts AS (
+WITH trip_counts AS(
   SELECT
     PULOCATIONID,
     COUNT(*) AS VOLUME,
-    (TOTAL_AMOUNT / VOLUME) AS AVERAGE_ACCOUNT
+    AVG(TOTAL_AMOUNT) AS AVERAGE_ACCOUNT
   FROM {{ ref('int_trip_metrics') }}
   GROUP BY PULOCATIONID
 )
