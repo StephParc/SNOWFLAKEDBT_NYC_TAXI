@@ -31,7 +31,7 @@ uv run dbt init
     account (https://<this_value>.snowflakecomputing.com): WQROSHC-WB67786
     user (dev username): nyc_taxi_driver
     Desired authentication type option (enter a number): 1 (1:password)
-    password (dev password): MotDePasseDBT123@
+    password (dev password): 
     role (dev role): taxi_driver
     warehouse (warehouse name): NYC_TAXI_WH
     database (default database that dbt will build objects in): NYC_TAXI_DB
